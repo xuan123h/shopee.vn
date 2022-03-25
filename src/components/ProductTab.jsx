@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Tabs, Tab } from "@material-ui/core";
 import O from "./O";
+import ProductXtra from "./ProductXtra";
 
 const ProductTab = () => {
   const [selectedTab, setSelectedTab] = React.useState(0);
@@ -46,7 +47,12 @@ const ProductTab = () => {
         <Tab label="Hoàn xu xtra" />
       </Tabs>
       {selectedTab === 0 && <div>{loading ? <Loading /> : <ShowOne />}</div>}
-      {selectedTab === 1 && <div> {loading ? <Loading /> : <ShowOne />} </div>}
+      {selectedTab === 1 && (
+        <div>
+          {" "}
+          <ProductXtra />{" "}
+        </div>
+      )}
     </div>
   );
 };
